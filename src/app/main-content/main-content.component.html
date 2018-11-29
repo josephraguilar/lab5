@@ -1,0 +1,25 @@
+<div class="center">r2c1</div>
+
+<div class="wrapper">
+  <button (click)="addStudent()" class="addButton btn btn-success">Add Student</button>
+  <table class="table-one">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Course ID</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{student.id}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.course}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="center">r2c3</div>
