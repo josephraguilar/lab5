@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <h3>Courses</h3>
+    <button *ngIf= "editMode == false" (click)="addStudent()" mat-raised-button class="nav-button right" color="accent">Add Student</button>
+    <button *ngIf= "editMode == true"(click)="saveStudent()" mat-raised-button class="left nav-button" color="accent">Save</button>
+  <table class="table-one">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Course ID</td>
+      </tr>
+    </thead>
+    <tbody *ngIf= "editMode == false">
+      <tr *ngFor="let student of students; let i = index;">
+        <td>{{student.id}}</td>
+        <td>{{student.firstName}}</td>
+        <td>{{student.lastName}}</td>
+        <td>{{student.course}}</td>
+        <td><button (click)="removeStudent(i)" mat-raised-button class="right nav-button" color="warn"><mat-icon>delete</mat-icon></button></td>
+      </tr>
+    </tbody>
+    <tbody *ngIf= "editMode == true">
+        <tr *ngFor="let student of students; let i = index" [ngClass]="{'new-form': student.id == null}">
+          <td><input [(ngModel)]="student.id" type="text" class="form-control" placeholder="ID"></td>
+          <td><input [(ngModel)]="student.firstName" type="text" class="form-control" placeholder="First Name"></td>
+          <td><input [(ngModel)]="student.lastName" type="text" class="form-control" placeholder="Last Name"></td>
+          <td><input [(ngModel)]="student.course" type="text" class="form-control" placeholder="Course"></td>
+        </tr>
+      </tbody>
+  </table>
+</div>

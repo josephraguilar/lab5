@@ -1,0 +1,26 @@
+<h3>Decision Table</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <td>Boolean Status</td>
+            <td>Condition X</td>
+            <td>Condition Y</td>
+            <td>Not X (!x)</td>
+            <td>Not Y (!Y)</td>
+            <td>X and Y (X & Y)</td>
+            <td>X OR Y</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cond of conditions">
+            <td>{{cond.condInfo}}</td>
+            <td>{{cond.condX}}</td>
+            <td>{{cond.condY}}</td>
+            <td>{{!cond.condX}}</td>
+            <td>{{!cond.condY}}</td>
+            <td>{{cond.condX && cond.condY}}</td>
+            <td>{{cond.condX || cond.condY}}</td>
+        </tr>
+
+    </tbody>
+</table>

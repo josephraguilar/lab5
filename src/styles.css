@@ -1,0 +1,53 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e6e2e2;
+  }
+
+  .app-container-grid {
+    display: grid;
+    grid-template-rows: 1fr 7fr 1fr;
+    grid-auto-columns: 1fr;
+    height: 100vh;
+  }
+
+  .main-footer {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  .main-header {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+  }
+
+  .center {
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .mat-toolbar-single-row {
+    height: 100% !important;
+  }
+
+  .table {
+    width: 100%;
+    padding: .5em;
+}
+
+.table > tbody > tr > td {
+    border: 1px solid #CCC;
+    padding: .5em;
+}
