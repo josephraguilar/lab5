@@ -15,6 +15,7 @@ interface IStudent {
 export class MainContentComponent implements OnInit {
 
   students: Array<IStudent> = [];
+  editMode: Boolean = false;
 
   constructor() {
     this.students[0] = {
@@ -24,19 +25,19 @@ export class MainContentComponent implements OnInit {
       course: 'Programming'
     }
     this.students[1] = {
-      id: 2,
+      id: 1,
       firstName: 'Tom',
       lastName: 'Brady',
       course: 'Athlete'
     }
     this.students[2] = {
-      id: 3,
+      id: 2,
       firstName: 'Mark',
       lastName: 'Zuckerberg',
       course: 'Herpetology'
     }
     this.students[3] = {
-      id: 4,
+      id: 3,
       firstName: 'Joe',
       lastName: 'Biden',
       course: 'Politics'
@@ -47,13 +48,28 @@ export class MainContentComponent implements OnInit {
   }
 
   addStudent(){
+    this.editMode = true;
     const student: IStudent = {
-      id:1,
-      firstName: "Mike",
-      lastName: "Tyson",
-      course: "Boxing"
+      id:null,
+      firstName: null,
+      lastName: null,
+      course: null
     };
-    this.students.push(student);
+    this.students.unshift(student);
+  }
+
+  saveStudent() {
+    if (this.students[0].id || this.students[0].firstName || this.students[0].lastName || this.students[0].course == null) {
+      alert('must fill all fields');
+      this.students.splice(0,1);
+      this.editMode = false;
+    } else {
+      this.editMode = false;
+    }
+  }
+
+  removeStudent(index: number) {
+    this.students.splice(index,1);
   }
 
 }

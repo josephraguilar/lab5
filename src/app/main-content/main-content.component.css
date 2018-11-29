@@ -7,3 +7,15 @@
     border: 1px solid #CCC;
     padding: .5em;
 }
+.right {
+    float: right;
+    margin: 10px 0px 10px 10px;
+}
+.left {
+    float: left;
+    margin: 10px 10px 10px 0px;
+}
+
+.new-form {
+    background-color: #007700; 
+}
